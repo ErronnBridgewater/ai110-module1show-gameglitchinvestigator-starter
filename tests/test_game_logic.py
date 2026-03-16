@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 from logic_utils import check_guess, update_score, get_range_for_difficulty
+=======
+from logic_utils import check_guess
+>>>>>>> d28145213e029bd9f9244f5f8071e0985a5e266e
 
 def test_winning_guess():
     # If the secret is 50 and guess is 50, it should be a win
@@ -14,6 +18,7 @@ def test_guess_too_low():
     # If secret is 50 and guess is 40, hint should be "Too Low"
     result = check_guess(40, 50)
     assert result == "Too Low"
+<<<<<<< HEAD
 
 
 # --- Tests targeting the new-game reset glitch ---
@@ -51,3 +56,5 @@ def test_get_range_normal():
     low, high = get_range_for_difficulty("Normal")
     assert low == 1
     assert high == 100
+=======
+>>>>>>> d28145213e029bd9f9244f5f8071e0985a5e266e
