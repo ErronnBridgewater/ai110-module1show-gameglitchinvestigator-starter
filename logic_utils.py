@@ -1,6 +1,5 @@
 def get_range_for_difficulty(difficulty: str):
     """Return (low, high) inclusive range for a given difficulty."""
-<<<<<<< HEAD
     if difficulty == "Easy":  #FIX: Refactored logic into logic_utils.py using Copilot Agent mode
         return 1, 20
     if difficulty == "Normal": #FIX: Refactored logic into logic_utils.py using Copilot Agent mode
@@ -11,18 +10,11 @@ def get_range_for_difficulty(difficulty: str):
 
 
 def parse_guess(raw: str): 
-=======
-    raise NotImplementedError("Refactor this function from app.py into logic_utils.py")
-
-
-def parse_guess(raw: str):
->>>>>>> d28145213e029bd9f9244f5f8071e0985a5e266e
     """
     Parse user input into an int guess.
 
     Returns: (ok: bool, guess_int: int | None, error_message: str | None)
     """
-<<<<<<< HEAD
     if raw is None: #FIX: Refactored logic into logic_utils.py using Copilot Agent mode
         return False, None, "Enter a guess."
 
@@ -38,14 +30,10 @@ def parse_guess(raw: str):
         return False, None, "That is not a number."
 
     return True, value, None #FIX: Refactored logic into logic_utils.py using Copilot Agent mode
-=======
-    raise NotImplementedError("Refactor this function from app.py into logic_utils.py")
->>>>>>> d28145213e029bd9f9244f5f8071e0985a5e266e
 
 
 def check_guess(guess, secret):
     """
-<<<<<<< HEAD
     Compare guess to secret and return outcome.
 
     outcome examples: "Win", "Too High", "Too Low"
@@ -84,15 +72,3 @@ def update_score(current_score: int, outcome: str, attempt_number: int):
         return current_score - 5
 
     return current_score
-=======
-    Compare guess to secret and return (outcome, message).
-
-    outcome examples: "Win", "Too High", "Too Low"
-    """
-    raise NotImplementedError("Refactor this function from app.py into logic_utils.py")
-
-
-def update_score(current_score: int, outcome: str, attempt_number: int):
-    """Update score based on outcome and attempt number."""
-    raise NotImplementedError("Refactor this function from app.py into logic_utils.py")
->>>>>>> d28145213e029bd9f9244f5f8071e0985a5e266e

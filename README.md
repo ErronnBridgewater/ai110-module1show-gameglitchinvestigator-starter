@@ -29,9 +29,11 @@ It wrote the code, ran away, and now the game is unplayable.
 - [ ] Detail which bugs you found.
 - [ ] Explain what fixes you applied.
 
+
 ## 📸 Demo
 
 - [ ] [Insert a screenshot of your fixed, winning game here]
+![alt text](bug_fix.png)
 
 ## 🚀 Stretch Features
 

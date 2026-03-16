@@ -46,7 +46,7 @@ I decided a bug was fixed only when it was proven the game's behavior matched th
 ## 4. What did you learn about Streamlit and state?
 
 - How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
-
+A Streamlit "rerun" is basically a website that "forgets" everything and refreshes the entire page every time you click a button or type a letter. The sesion State is like a small notebook the website keeps in its pocket. Even though the page refreshes and "re-reads" the code from top to bottom, it checks the notebook to remember things that were previously entered or saved.
 ---
 
 ## 5. Looking ahead: your developer habits
@@ -55,3 +55,5 @@ I decided a bug was fixed only when it was proven the game's behavior matched th
   - This could be a testing habit, a prompting strategy, or a way you used Git.
 - What is one thing you would do differently next time you work with AI on a coding task?
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
+
+I want to reuse the habit of Refactoring Logic into a separate file (like logic_utils.py). Keeping the "math" separate from the "UI" (Streamlit) made it much easier to write automated tests and kept the main app script clean and readable.  Next time, I will be more skeptical of "reset" logic. I learned that AI often provides the most obvious code (like resetting a score) but forgets the "hidden" logic that actually controls the flow of the program. This project taught me that AI is great at drafting code but needs assistance finalizing it. It can write functional snippets of code quickly, but there needs to be a  human developer to ensure those snippets actually work together. 

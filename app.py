@@ -1,6 +1,5 @@
 import random
 import streamlit as st
-<<<<<<< HEAD
 from logic_utils import get_range_for_difficulty, parse_guess, check_guess, update_score
 
 _outcome_messages = {
@@ -8,81 +7,13 @@ _outcome_messages = {
     "Too High": "📉 Go LOWER!",
     "Too Low": "📈 Go HIGHER!",
 }
-=======
-
-def get_range_for_difficulty(difficulty: str):
-    if difficulty == "Easy":
-        return 1, 20
-    if difficulty == "Normal":
-        return 1, 100
-    if difficulty == "Hard":
-        return 1, 50
-    return 1, 100
-
-
-def parse_guess(raw: str):
-    if raw is None:
-        return False, None, "Enter a guess."
-
-    if raw == "":
-        return False, None, "Enter a guess."
-
-    try:
-        if "." in raw:
-            value = int(float(raw))
-        else:
-            value = int(raw)
-    except Exception:
-        return False, None, "That is not a number."
-
-    return True, value, None
-
-
-def check_guess(guess, secret):
-    if guess == secret:
-        return "Win", "🎉 Correct!"
-
-    try:
-        if guess > secret:
-            return "Too High", "📈 Go HIGHER!"
-        else:
-            return "Too Low", "📉 Go LOWER!"
-    except TypeError:
-        g = str(guess)
-        if g == secret:
-            return "Win", "🎉 Correct!"
-        if g > secret:
-            return "Too High", "📈 Go HIGHER!"
-        return "Too Low", "📉 Go LOWER!"
-
-
-def update_score(current_score: int, outcome: str, attempt_number: int):
-    if outcome == "Win":
-        points = 100 - 10 * (attempt_number + 1)
-        if points < 10:
-            points = 10
-        return current_score + points
-
-    if outcome == "Too High":
-        if attempt_number % 2 == 0:
-            return current_score + 5
-        return current_score - 5
-
-    if outcome == "Too Low":
-        return current_score - 5
-
-    return current_score
->>>>>>> d28145213e029bd9f9244f5f8071e0985a5e266e
 
 st.set_page_config(page_title="Glitchy Guesser", page_icon="🎮")
 
 st.title("🎮 Game Glitch Investigator")
-<<<<<<< HEAD
 if st.session_state.get("show_new_game_message", False):
     st.success("New game started.")
     st.session_state.show_new_game_message = False
-=======
->>>>>>> d28145213e029bd9f9244f5f8071e0985a5e266e
 st.caption("An AI-generated guessing game. Something is off.")
 
 st.sidebar.header("Settings")
@@ -148,18 +79,12 @@ with col3:
     show_hint = st.checkbox("Show hint", value=True)
 
 if new_game:
-<<<<<<< HEAD
     st.session_state.attempts = 1
     st.session_state.secret = random.randint(low, high)
     st.session_state.status = "playing"
     st.session_state.score = 0
     st.session_state.history = []
     st.session_state.show_new_game_message = True
-=======
-    st.session_state.attempts = 0
-    st.session_state.secret = random.randint(1, 100)
-    st.success("New game started.")
->>>>>>> d28145213e029bd9f9244f5f8071e0985a5e266e
     st.rerun()
 
 if st.session_state.status != "playing":
@@ -167,11 +92,7 @@ if st.session_state.status != "playing":
         st.success("You already won. Start a new game to play again.")
     else:
         st.error("Game over. Start a new game to try again.")
-<<<<<<< HEAD
     st.stop() # FIXME: Logic breaks here
-=======
-    st.stop()
->>>>>>> d28145213e029bd9f9244f5f8071e0985a5e266e
 
 if submit:
     st.session_state.attempts += 1
@@ -184,7 +105,6 @@ if submit:
     else:
         st.session_state.history.append(guess_int)
 
-<<<<<<< HEAD
         if st.session_state.attempts % 2 == 0: 
             secret = str(st.session_state.secret)
         else: 
@@ -192,14 +112,6 @@ if submit:
 
         outcome = check_guess(guess_int, secret)
         message = _outcome_messages.get(outcome, "")
-=======
-        if st.session_state.attempts % 2 == 0:
-            secret = str(st.session_state.secret)
-        else:
-            secret = st.session_state.secret
-
-        outcome, message = check_guess(guess_int, secret)
->>>>>>> d28145213e029bd9f9244f5f8071e0985a5e266e
 
         if show_hint:
             st.warning(message)
